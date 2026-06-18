@@ -31,8 +31,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Set to your GitHub repo name, e.g. /design-system-docs
-          VITE_BASE_URL: ${{ vars.VITE_BASE_URL || '/' }}
+          VITE_BASE_URL: /${{ github.event.repository.name }}/
 
       - uses: actions/upload-pages-artifact@v3
         with:
