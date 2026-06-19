@@ -24,6 +24,7 @@ import TooltipPage from './pages/components/TooltipPage.jsx'
 import ModalPage from './pages/components/ModalPage.jsx'
 import ToastPage from './pages/components/ToastPage.jsx'
 import NavItemPage from './pages/components/NavItemPage.jsx'
+import NavbarPage from './pages/components/NavbarPage.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 export default function App() {
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/components/tooltip"  element={<TooltipPage />} />
         <Route path="/components/modal"    element={<ModalPage />} />
         <Route path="/components/toast"    element={<ToastPage />} />
+        <Route path="/components/navbar"   element={<NavbarPage />} />
         <Route path="/components/nav-item" element={<NavItemPage />} />
         <Route path="/components/*" element={<ComingSoon title="Component" />} />
       </Routes>

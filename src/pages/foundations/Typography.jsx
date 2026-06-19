@@ -15,13 +15,14 @@ export default function TypographyPage() {
     { name: 'Label/Large',        size: 14, weight: 500, lineHeight: '20px', sample: 'Button labels, form labels, nav items' },
     { name: 'Label/Small',        size: 12, weight: 500, lineHeight: '18px', sample: 'Tags, badges, timestamps', letterSpacing: '0.5px' },
     { name: 'Code/Inline',        size: 14, weight: 400, lineHeight: '20px', sample: 'const value = token.resolve()', mono: true },
+    { name: 'Label/Large Underline', size: 14, weight: 500, lineHeight: '20px', sample: 'Inline links and underlined navigation', underline: true },
   ]
 
   return (
     <>
       <h1 className="page-title">Typography</h1>
       <p className="page-description">
-        15 text styles across Display, Heading, Body, Label, and Code categories.
+        16 text styles across Display, Heading, Body, Label, and Code categories.
         Inter for UI text, JetBrains Mono for code. Each specimen renders at its actual size.
       </p>
       <h2 className="section-title">Type scale</h2>
@@ -51,6 +52,7 @@ export default function TypographyPage() {
                 fontWeight: s.weight,
                 lineHeight: s.lineHeight,
                 letterSpacing: s.letterSpacing || 'normal',
+                textDecoration: s.underline ? 'underline' : 'none',
                 color: 'var(--color-text-default)',
                 fontFamily: s.mono ? 'var(--font-mono)' : 'var(--font-sans)',
                 overflow: 'hidden',

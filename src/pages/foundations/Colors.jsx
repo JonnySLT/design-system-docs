@@ -30,21 +30,21 @@ const emerald = [
   { name: 'emerald-50',  value: '#ECFDF5', type: 'color' },
   { name: 'emerald-400', value: '#34D399', type: 'color' },
   { name: 'emerald-500', value: '#10B981', type: 'color' },
-  { name: 'emerald-700', value: '#047857', type: 'color' },
+  { name: 'emerald-900', value: '#064E3B', type: 'color' },
 ]
 
 const amber = [
   { name: 'amber-50',  value: '#FFFBEB', type: 'color' },
   { name: 'amber-400', value: '#FBBF24', type: 'color' },
   { name: 'amber-500', value: '#F59E0B', type: 'color' },
-  { name: 'amber-700', value: '#B45309', type: 'color' },
+  { name: 'amber-900', value: '#78350F', type: 'color' },
 ]
 
 const red = [
   { name: 'red-50',  value: '#FEF2F2', type: 'color' },
   { name: 'red-500', value: '#EF4444', type: 'color' },
   { name: 'red-600', value: '#DC2626', type: 'color' },
-  { name: 'red-700', value: '#B91C1C', type: 'color' },
+  { name: 'red-900', value: '#7F1D1D', type: 'color' },
 ]
 
 const base = [
@@ -61,7 +61,7 @@ const semanticBg = [
 
 const semanticText = [
   { name: 'color-text-default',    value: '#0F172A', type: 'color', description: 'Primary body text' },
-  { name: 'color-text-muted',      value: '#475569', type: 'color', description: 'Secondary / supporting text' },
+  { name: 'color-text-muted',      value: '#64748B', type: 'color', description: 'Secondary / supporting text' },
   { name: 'color-text-disabled',   value: '#94A3B8', type: 'color', description: 'Placeholder and disabled text' },
   { name: 'color-text-on-primary', value: '#FFFFFF', type: 'color', description: 'Text on brand-colored backgrounds' },
 ]
@@ -77,19 +77,19 @@ const semanticInteractive = [
 const semanticBorder = [
   { name: 'color-border-default', value: '#E2E8F0', type: 'color', description: 'Default dividers and input outlines' },
   { name: 'color-border-strong',  value: '#CBD5E1', type: 'color', description: 'Stronger separation' },
-  { name: 'color-border-focus',   value: '#4F46E5', type: 'color', description: 'Focus ring outline' },
+  { name: 'color-border-focus',   value: '#6366F1', type: 'color', description: 'Focus ring outline' },
 ]
 
 const semanticFeedback = [
   { name: 'color-success-bg',     value: '#ECFDF5', type: 'color', description: 'Success background tint' },
   { name: 'color-success-border', value: '#10B981', type: 'color', description: 'Success border' },
-  { name: 'color-success-text',   value: '#047857', type: 'color', description: 'Success text' },
+  { name: 'color-success-text',   value: '#064E3B', type: 'color', description: 'Success text' },
   { name: 'color-warning-bg',     value: '#FFFBEB', type: 'color', description: 'Warning background tint' },
   { name: 'color-warning-border', value: '#F59E0B', type: 'color', description: 'Warning border' },
-  { name: 'color-warning-text',   value: '#B45309', type: 'color', description: 'Warning text' },
+  { name: 'color-warning-text',   value: '#78350F', type: 'color', description: 'Warning text' },
   { name: 'color-error-bg',       value: '#FEF2F2', type: 'color', description: 'Error background tint' },
   { name: 'color-error-border',   value: '#DC2626', type: 'color', description: 'Error border' },
-  { name: 'color-error-text',     value: '#B91C1C', type: 'color', description: 'Error text' },
+  { name: 'color-error-text',     value: '#7F1D1D', type: 'color', description: 'Error text' },
   { name: 'color-info-bg',        value: '#EEF2FF', type: 'color', description: 'Info background tint' },
   { name: 'color-info-border',    value: '#4F46E5', type: 'color', description: 'Info border' },
   { name: 'color-info-text',      value: '#4338CA', type: 'color', description: 'Info text' },

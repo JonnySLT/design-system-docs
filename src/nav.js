@@ -55,6 +55,7 @@ export const navigation = [
   {
     section: 'Navigation',
     links: [
+      { label: 'Navbar',   path: '/components/navbar' },
       { label: 'Nav Item', path: '/components/nav-item' },
     ],
   },
