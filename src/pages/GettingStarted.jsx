@@ -26,22 +26,6 @@ import '@your-org/design-system/tokens.css'`} />
 export default function MyPage() {
   return <Button variant="primary">Save changes</Button>
 }`} />
-
-      <h2 className="section-title">Syncing tokens from Figma</h2>
-      <p style={{ color: 'var(--color-text-muted)', marginBottom: 16, fontSize: 14 }}>
-        The token pipeline connects Figma variables directly to the CSS file that ships
-        with this package. Set your Figma access token, then run:
-      </p>
-      <CodeBlock language="bash" code={`# Set your Figma personal access token
-export FIGMA_ACCESS_TOKEN=your_token_here
-
-# Pull latest tokens from Figma and rebuild the CSS
-npm run tokens`} />
-      <p style={{ color: 'var(--color-text-muted)', fontSize: 13, marginTop: 8 }}>
-        This fetches all Figma variables, resolves aliases, and generates{' '}
-        <code style={{ fontFamily: 'var(--font-mono)', fontSize: 12 }}>src/tokens/tokens.css</code>.
-        Commit the result and the site redeploys automatically via GitHub Actions.
-      </p>
     </>
   )
 }

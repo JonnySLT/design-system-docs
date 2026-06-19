@@ -5,10 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "sync-tokens": "node scripts/sync-figma-tokens.mjs",
-    "build-tokens": "node style-dictionary/config.mjs",
-    "tokens": "npm run sync-tokens && npm run build-tokens"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -18,7 +15,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "style-dictionary": "^4.1.4",
     "vite": "^5.4.2"
   }
 }

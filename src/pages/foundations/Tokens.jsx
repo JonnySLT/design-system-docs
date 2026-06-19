@@ -67,9 +67,9 @@ export default function TokensPage() {
       <h1 className="page-title">Design Tokens</h1>
       <p className="page-description">
         All visual properties — colors, spacing, radius, typography — are defined as
-        CSS custom properties generated from Figma variables. Run{' '}
-        <code style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>npm run tokens</code>{' '}
-        to pull the latest values from Figma.
+        CSS custom properties in{' '}
+        <code style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>src/tokens/tokens.css</code>.
+        They mirror the variables in the Claude Design System Figma file and are maintained directly in that file.
       </p>
 
       <h2 className="section-title">Color tokens</h2>
