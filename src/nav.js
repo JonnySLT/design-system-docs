@@ -20,6 +20,7 @@ export const navigation = [
     section: 'General',
     links: [
       { label: 'Button',   path: '/components/button' },
+      { label: 'Icons',    path: '/components/icons' },
     ],
   },
   {

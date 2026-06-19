@@ -8,6 +8,7 @@ import ColorsPage from './pages/foundations/Colors.jsx'
 import TypographyPage from './pages/foundations/Typography.jsx'
 import SpacingPage from './pages/foundations/Spacing.jsx'
 import ButtonPage from './pages/components/ButtonPage.jsx'
+import IconPage from './pages/components/IconPage.jsx'
 import AlertPage from './pages/components/AlertPage.jsx'
 import BadgePage from './pages/components/BadgePage.jsx'
 import AvatarPage from './pages/components/AvatarPage.jsx'
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/foundations/typography" element={<TypographyPage />} />
         <Route path="/foundations/spacing"    element={<SpacingPage />} />
         <Route path="/components/button"   element={<ButtonPage />} />
+        <Route path="/components/icons"    element={<IconPage />} />
         <Route path="/components/alert"    element={<AlertPage />} />
         <Route path="/components/badge"    element={<BadgePage />} />
         <Route path="/components/avatar"   element={<AvatarPage />} />
