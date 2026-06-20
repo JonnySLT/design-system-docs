@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import NavItem from '../../components/ui/NavItem.jsx'
 
 const basicCode = `<NavItem label="Dashboard" active />
@@ -57,6 +58,22 @@ export default function NavItemPage() {
           <NavItem icon="⚙️" label="Settings" disabled />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Mark the current item with aria-current="page" (the active prop does this).',
+          'Pass href when it navigates so it renders a real link — keyboard- and screen-reader-friendly.',
+          'Icon-only items need an accessible label.',
+        ]}
+        dos={[
+          'Use within a nav landmark; keep labels short and scannable.',
+          'Show the active state for the current location.',
+        ]}
+        donts={[
+          'Don’t use a button for navigation — pass href to render a link.',
+          'Don’t rely on an icon alone without a label.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

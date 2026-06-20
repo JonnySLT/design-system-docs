@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Navbar from '../../components/ui/Navbar.jsx'
 
 const code = `<Navbar
@@ -55,6 +56,22 @@ export default function NavbarPage() {
           />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Render inside a <nav> landmark; give it an aria-label when the page has more than one nav.',
+          'Group destinations under section headings and mark the current item with aria-current.',
+          'Ensure the whole sidebar is keyboard-navigable in a logical order.',
+        ]}
+        dos={[
+          'Use for primary app navigation; group related destinations into sections.',
+          'Keep primary nav at the top and the user/account row at the bottom.',
+        ]}
+        donts={[
+          'Don’t overload it — keep each group focused (≈5–7 destinations).',
+          'Don’t bury the active state; where the user is should be obvious.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

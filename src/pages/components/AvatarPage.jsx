@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Avatar from '../../components/ui/Avatar.jsx'
 
 const sizesCode = `<Avatar size="sm" name="Alice Baker" />
@@ -45,6 +46,21 @@ export default function AvatarPage() {
           <Avatar name="Carlos Diaz" />
           <Avatar name="Priya Mehta" />
         </div>}
+      />
+
+      <Guidelines
+        accessibility={[
+          'Pass the name prop so the avatar gets initials and an accessible label when the image is missing or fails.',
+          'If the avatar sits beside a visible name, mark the image decorative (aria-hidden) to avoid a duplicate announcement.',
+        ]}
+        dos={[
+          'Always pass name so initials and the label work as a fallback.',
+          'Stick to the defined sizes for consistent rhythm.',
+        ]}
+        donts={[
+          'Don’t rely on color alone to distinguish users.',
+          'Don’t make an avatar the only target for an important action — pair it with a label.',
+        ]}
       />
 
       <h2 className="section-title">Props</h2>

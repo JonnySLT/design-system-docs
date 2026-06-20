@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Badge from '../../components/ui/Badge.jsx'
 
 const variantsCode = `<Badge variant="default">Default</Badge>
@@ -47,6 +48,21 @@ export default function BadgePage() {
           <Badge size="md">Medium</Badge>
           <Badge size="lg">Large</Badge>
         </div>}
+      />
+
+      <Guidelines
+        accessibility={[
+          'A badge is text — make its meaning clear from the label, not color alone.',
+          'If it conveys a live count (e.g. unread), expose that to assistive tech via an aria-label on the parent control.',
+        ]}
+        dos={[
+          'Use to label status or categorize an item with a short word.',
+          'Match the variant to meaning (success / warning / error).',
+        ]}
+        donts={[
+          'Don’t put long text or interactive elements inside a badge.',
+          'Don’t use a semantic color decoratively — it implies meaning.',
+        ]}
       />
 
       <h2 className="section-title">Props</h2>

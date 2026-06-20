@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Spinner from '../../components/ui/Spinner.jsx'
 
 const sizesCode = `<Spinner size="sm" />
@@ -41,6 +42,21 @@ export default function SpinnerPage() {
           <Spinner color="primary" />
           <Spinner color="muted" />
         </div>}
+      />
+
+      <Guidelines
+        accessibility={[
+          'Pair the spinner with text or an aria-label / aria-live region so the loading state is announced.',
+          'For in-button loading, keep the button’s accessible name and disable it while busy.',
+        ]}
+        dos={[
+          'Use for short, indeterminate waits.',
+          'Show it where the result will appear (in place), not only globally.',
+        ]}
+        donts={[
+          'Don’t use a spinner for long or measurable progress — use a progress bar.',
+          'Don’t block the whole screen for a small background task.',
+        ]}
       />
 
       <h2 className="section-title">Props</h2>

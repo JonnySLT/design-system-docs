@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Card, { CardHeader, CardFooter } from '../../components/ui/Card.jsx'
 import Button from '../../components/ui/Button.jsx'
 import Badge from '../../components/ui/Badge.jsx'
@@ -59,6 +60,21 @@ export default function CardPage() {
           </Card>
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'A card is a container, not a control — if the whole card is clickable, use a real link/button with a visible focus state.',
+          'Keep a logical heading structure within the card (e.g. the CardHeader title).',
+        ]}
+        dos={[
+          'Use to group related content and actions onto one surface.',
+          'Give cards consistent padding and spacing.',
+        ]}
+        donts={[
+          'Don’t nest cards deeply — it muddies the hierarchy.',
+          'Don’t make a card clickable without a clear affordance and focus state.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />
