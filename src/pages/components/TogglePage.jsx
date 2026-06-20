@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Toggle from '../../components/ui/Toggle.jsx'
 
 const basicCode = `<Toggle label="Enable notifications" checked={on} onChange={e => setOn(e.target.checked)} />`
@@ -49,6 +50,21 @@ export default function TogglePage() {
           <Toggle label="Disabled on"  disabled checked={true}  onChange={() => {}} />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Exposes a switch role with an accessible label; Space/Enter flips it.',
+          'Keep a visible focus ring and convey state with position + label, not color alone.',
+        ]}
+        dos={[
+          'Use for a setting that applies instantly, with no Save step.',
+          'Label the setting itself (“Email notifications”), not “On/Off”.',
+        ]}
+        donts={[
+          'Don’t use a toggle inside a form that requires submitting — use a Checkbox.',
+          'Don’t use a toggle to perform an action — use a Button.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

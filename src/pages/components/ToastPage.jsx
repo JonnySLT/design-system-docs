@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import { ToastContainer, useToast } from '../../components/ui/Toast.jsx'
 import Button from '../../components/ui/Button.jsx'
 
@@ -44,6 +45,22 @@ export default function ToastPage() {
 
       <h2 className="section-title">Interactive demo</h2>
       <ComponentDemo code={basicCode} preview={<ToastDemo />} />
+
+      <Guidelines
+        accessibility={[
+          'Toasts are announced via an aria-live region — polite for info, assertive for errors.',
+          'Allow enough time to read; don’t auto-dismiss messages users must act on.',
+          'Never put the only copy of important info, or the only action, in a toast — it disappears.',
+        ]}
+        dos={[
+          'Use for brief, non-blocking confirmation of a completed action.',
+          'Keep the message to one short line.',
+        ]}
+        donts={[
+          'Don’t use a toast for errors that need a decision — use an Alert or Modal.',
+          'Don’t show several toasts at once.',
+        ]}
+      />
 
       <h2 className="section-title">Toast options</h2>
       <PropsTable rows={props} />

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Select from '../../components/ui/Select.jsx'
 
 const basicCode = `<Select
@@ -62,6 +63,22 @@ export default function SelectPage() {
           <Select label="Error" value="" onChange={() => {}} error="Please select a plan." options={[{ value: 'pro', label: 'Pro' }]} placeholder="Choose plan" />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Always pair the select with a visible label.',
+          'Keyboard: open with Enter/Space/Arrows, move with arrows, choose with Enter, dismiss with Escape.',
+          'Convey errors with the error prop (message + styling), not color alone.',
+        ]}
+        dos={[
+          'Use for picking one option from a longer list (≈6+).',
+          'Order options predictably — alphabetical or by frequency.',
+        ]}
+        donts={[
+          'Don’t use a select for 2–4 options — radios are faster to scan.',
+          'Don’t rely on the placeholder as the label.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

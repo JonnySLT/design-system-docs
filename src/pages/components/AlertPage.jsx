@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Alert from '../../components/ui/Alert.jsx'
 
 const typesCode = `<Alert type="info"    title="Info"    message="Your session will expire in 10 minutes." />
@@ -68,6 +69,22 @@ export default function AlertPage() {
       <ComponentDemo
         code={noIconCode}
         preview={<Alert type="info" title="Scheduled maintenance" message="The platform will be unavailable on Sunday from 2–4 AM UTC." showIcon={false} />}
+      />
+
+      <Guidelines
+        accessibility={[
+          'Use role="alert" (assertive) for urgent messages or "status" (polite) for non-urgent ones.',
+          'Communicate type with the icon + text, never color alone.',
+          'When dismissible, the close button needs an aria-label.',
+        ]}
+        dos={[
+          'Use for persistent, inline messages tied to a section or form.',
+          'Pair the type with a clear, actionable message.',
+        ]}
+        donts={[
+          'Don’t use an alert for transient confirmation — use a Toast.',
+          'Don’t convey severity with color only.',
+        ]}
       />
 
       <h2 className="section-title">Props</h2>

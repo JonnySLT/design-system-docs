@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Radio, { RadioGroup } from '../../components/ui/Radio.jsx'
 
 const basicCode = `<RadioGroup label="Notification frequency">
@@ -36,6 +37,22 @@ export default function RadioPage() {
           <Radio id="never"   label="Never"   value="never"   checked={val === 'never'}   onChange={e => setVal(e.target.value)} disabled />
         </RadioGroup>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Wrap a set in a group with a label/legend that describes the choice (RadioGroup does this).',
+          'Arrow keys move between options; only the selected option stays in the tab order (roving focus).',
+          'Each option’s label is tied to its input — clicking the label selects it.',
+        ]}
+        dos={[
+          'Use radios for mutually exclusive choices where exactly one is selected.',
+          'Show a sensible default selection where possible.',
+        ]}
+        donts={[
+          'Don’t use radios when more than one option can be chosen — use Checkbox.',
+          'Don’t use a radio group for long lists (≈6+) — use Select.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

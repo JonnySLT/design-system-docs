@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Tabs from '../../components/ui/Tabs.jsx'
 
 const basicCode = `<Tabs tabs={[
@@ -31,6 +32,21 @@ export default function TabsPage() {
           { label: 'Archive',  content: <p style={{ color: 'var(--color-text-muted)', margin: 0, fontSize: 14 }}>View archived tasks and closed milestones.</p> },
         ]} />
       } />
+
+      <Guidelines
+        accessibility={[
+          'Uses tablist / tab / tabpanel roles; the active tab is aria-selected and labels its panel.',
+          'Arrow keys move between tabs; Tab moves focus into the active panel.',
+        ]}
+        dos={[
+          'Use to switch between related views in the same context.',
+          'Keep tab labels to one or two words.',
+        ]}
+        donts={[
+          'Don’t use tabs for sequential steps — use a stepper.',
+          'Don’t hide critical content behind a non-default tab.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />
