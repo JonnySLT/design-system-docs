@@ -61,18 +61,11 @@ routed in `App.jsx`, and listed in `nav.js`. Figma node IDs (file `njWLlZEF7ekub
 | Toggle | `40:18` | Tooltip | `55:22` |
 
 **Adding a component:** create `src/components/ui/X.jsx` + `X.css`, a `pages/components/XPage.jsx`
-(use `ComponentDemo` + `PropsTable`), add the route in `App.jsx` and the entry in `nav.js`, and a
-Code Connect mapping `src/components/ui/X.figma.tsx`.
+(use `ComponentDemo` + `PropsTable`), and add the route in `App.jsx` and the entry in `nav.js`.
 
-## Code Connect
+## Figma → code reference
 
-Code Connect bridges Figma → this repo: in Figma Dev Mode (and via the Figma MCP) it surfaces the
-real React usage for each component. Setup:
-
-- Config: `figma.config.json` (React parser, includes `src/components/**/*.figma.tsx`).
-- Mappings: one `Component.figma.tsx` per component. `Button.figma.tsx` is the reference example;
-  the rest follow the same shape (map the Figma `Style`/`Size`/`State` variants to React props).
-- To publish: `npm i -D @figma/code-connect`, then `npx figma connect publish --token <token>`.
-  **Note:** viewing/publishing Code Connect requires Figma **Dev Mode** (Organization/Enterprise
-  plan). The mapping files are valuable as the canonical Figma→code reference regardless, and are
-  ready to publish once Dev Mode is available.
+Code Connect (which surfaces a component's React code directly in Figma Dev Mode) requires an
+**Organization or Enterprise** plan, so it isn't set up here. Instead, the **component → Figma
+node-id table above** and **[`TOKENS.md`](./TOKENS.md)** are the manual Figma→code bridge — use them
+to translate a Figma component or variable to its repo counterpart.
