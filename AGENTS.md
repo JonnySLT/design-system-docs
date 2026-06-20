@@ -14,6 +14,14 @@ to get productive without spelunking.
   changelog entries.** See the root `CLAUDE.md` workflow (immediate logging on push; a weekly
   sweep catches manual Figma edits).
 
+## Machine-readable index (for tools & AI agents)
+
+- **`components.json`** — every component's import path, props (name/type/default/description),
+  Figma node id, and doc URL. Load this to know the whole component API in one file.
+- **`tokens.json`** — all design tokens in W3C DTCG format (light values; dark in `tokens.css`).
+- **`public/llms.txt`** — served at the site root; an LLM-friendly index of the docs + these files.
+- **`TOKENS.md`** — the prose Figma-variable ↔ CSS-variable map.
+
 ## Stack
 
 - Vite + React 18, `react-router-dom` **HashRouter**, deployed to **GitHub Pages** via

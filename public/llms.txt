@@ -1,0 +1,42 @@
+# Claude Design System
+
+> A React + CSS design system and docs site, mirroring the Claude Design System Figma library
+> (file key njWLlZEF7ekubL8zrsegQ3). Covers design tokens, 16 text styles, 88 icons, and 17
+> components. Each component has a live demo and a props table.
+
+Machine-readable references (in the repo, https://github.com/JonnySLT/design-system-docs):
+- AGENTS.md — repo orientation: structure, token rules, component → Figma node-id map.
+- components.json — manifest of every component: import path, props (name/type/default), Figma node id, doc URL.
+- tokens.json — design tokens in W3C DTCG format (light values; dark in tokens.css).
+- TOKENS.md — Figma-variable ↔ CSS-variable mapping (prose).
+
+## Foundations
+- [Design Tokens](https://jonnyslt.github.io/design-system-docs/#/foundations/tokens): token system overview
+- [Colors](https://jonnyslt.github.io/design-system-docs/#/foundations/colors): primitive + semantic color tokens
+- [Typography](https://jonnyslt.github.io/design-system-docs/#/foundations/typography): 16 text styles
+- [Spacing](https://jonnyslt.github.io/design-system-docs/#/foundations/spacing): spacing, radius, elevation
+
+## Components
+- [Button](https://jonnyslt.github.io/design-system-docs/#/components/button)
+- [Icons](https://jonnyslt.github.io/design-system-docs/#/components/icons): all 88 icons, searchable
+- [Checkbox](https://jonnyslt.github.io/design-system-docs/#/components/checkbox)
+- [Input](https://jonnyslt.github.io/design-system-docs/#/components/input)
+- [Radio](https://jonnyslt.github.io/design-system-docs/#/components/radio)
+- [Select](https://jonnyslt.github.io/design-system-docs/#/components/select)
+- [Toggle](https://jonnyslt.github.io/design-system-docs/#/components/toggle)
+- [Avatar](https://jonnyslt.github.io/design-system-docs/#/components/avatar)
+- [Badge](https://jonnyslt.github.io/design-system-docs/#/components/badge)
+- [Card](https://jonnyslt.github.io/design-system-docs/#/components/card)
+- [Tabs](https://jonnyslt.github.io/design-system-docs/#/components/tabs)
+- [Tooltip](https://jonnyslt.github.io/design-system-docs/#/components/tooltip)
+- [Alert](https://jonnyslt.github.io/design-system-docs/#/components/alert)
+- [Modal](https://jonnyslt.github.io/design-system-docs/#/components/modal)
+- [Spinner](https://jonnyslt.github.io/design-system-docs/#/components/spinner)
+- [Toast](https://jonnyslt.github.io/design-system-docs/#/components/toast)
+- [Navbar](https://jonnyslt.github.io/design-system-docs/#/components/navbar)
+- [Nav Item](https://jonnyslt.github.io/design-system-docs/#/components/nav-item)
+
+## Getting Started
+- [Introduction](https://jonnyslt.github.io/design-system-docs/#/)
+- [Installation](https://jonnyslt.github.io/design-system-docs/#/getting-started/installation)
+- [Usage](https://jonnyslt.github.io/design-system-docs/#/getting-started/usage)

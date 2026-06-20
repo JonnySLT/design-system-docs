@@ -1,0 +1,240 @@
+{
+  "name": "Claude Design System",
+  "figmaFile": "njWLlZEF7ekubL8zrsegQ3",
+  "docsBaseUrl": "https://jonnyslt.github.io/design-system-docs/#",
+  "components": [
+    {
+      "name": "Alert",
+      "import": "src/components/ui/Alert.jsx",
+      "export": "default",
+      "doc": "/components/alert",
+      "figmaNodeId": "44:30",
+      "props": [
+        { "name": "type", "type": "\"info\" | \"success\" | \"warning\" | \"error\"", "default": "info", "description": "Determines icon and color treatment" },
+        { "name": "title", "type": "string", "default": null, "description": "Bold heading text" },
+        { "name": "message", "type": "string", "default": null, "description": "Supporting body text" },
+        { "name": "showIcon", "type": "boolean", "default": "true", "description": "Shows the type-specific icon" },
+        { "name": "dismissible", "type": "boolean", "default": "false", "description": "Shows a close button to dismiss the alert" },
+        { "name": "onDismiss", "type": "() => void", "default": null, "description": "Called when the alert is dismissed" }
+      ]
+    },
+    {
+      "name": "Avatar",
+      "import": "src/components/ui/Avatar.jsx",
+      "export": "default",
+      "doc": "/components/avatar",
+      "figmaNodeId": "37:50",
+      "props": [
+        { "name": "name", "type": "string", "default": null, "description": "Full name — generates initials and accessible label" },
+        { "name": "src", "type": "string", "default": null, "description": "Image URL; falls back to initials on error" },
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "24px / 32px / 40px" }
+      ]
+    },
+    {
+      "name": "Badge",
+      "import": "src/components/ui/Badge.jsx",
+      "export": "default",
+      "doc": "/components/badge",
+      "figmaNodeId": "35:36",
+      "props": [
+        { "name": "variant", "type": "\"default\" | \"primary\" | \"success\" | \"warning\" | \"error\"", "default": "default", "description": "Color and semantic meaning of the badge" },
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "Font and padding scale" },
+        { "name": "children", "type": "ReactNode", "default": null, "description": "Badge label content" }
+      ]
+    },
+    {
+      "name": "Button",
+      "import": "src/components/ui/Button.jsx",
+      "export": "default",
+      "doc": "/components/button",
+      "figmaNodeId": "24:2",
+      "props": [
+        { "name": "variant", "type": "\"primary\" | \"secondary\" | \"ghost\" | \"destructive\"", "default": "primary", "description": "Visual style of the button" },
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "Height and padding scale" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction and reduces opacity" },
+        { "name": "loading", "type": "boolean", "default": "false", "description": "Shows a spinner and prevents interaction" },
+        { "name": "onClick", "type": "() => void", "default": null, "description": "Click handler" },
+        { "name": "children", "type": "ReactNode", "default": null, "description": "Button label content" }
+      ]
+    },
+    {
+      "name": "Card",
+      "import": "src/components/ui/Card.jsx",
+      "export": "default",
+      "doc": "/components/card",
+      "figmaNodeId": "43:21",
+      "props": [
+        { "name": "children", "type": "ReactNode", "default": null, "description": "Card content" },
+        { "name": "padding", "type": "boolean", "default": "true", "description": "Adds 24px internal padding" },
+        { "name": "hoverable", "type": "boolean", "default": "false", "description": "Adds hover lift and shadow" }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "import": "src/components/ui/Checkbox.jsx",
+      "export": "default",
+      "doc": "/components/checkbox",
+      "figmaNodeId": "39:26",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "checked", "type": "boolean", "default": "false", "description": "Controlled checked state" },
+        { "name": "onChange", "type": "function", "default": null, "description": "Change handler" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" },
+        { "name": "indeterminate", "type": "boolean", "default": "false", "description": "Shows a dash — useful for \"select all\" parents" },
+        { "name": "helperText", "type": "string", "default": null, "description": "Hint below the checkbox" }
+      ]
+    },
+    {
+      "name": "Input",
+      "import": "src/components/ui/Input.jsx",
+      "export": "default",
+      "doc": "/components/input",
+      "figmaNodeId": "42:42",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Visible label above the field" },
+        { "name": "type", "type": "string", "default": "text", "description": "HTML input type (text, password, email, number…)" },
+        { "name": "placeholder", "type": "string", "default": null, "description": "Placeholder text shown when empty" },
+        { "name": "value", "type": "string", "default": null, "description": "Controlled value" },
+        { "name": "onChange", "type": "function", "default": null, "description": "Change handler" },
+        { "name": "helperText", "type": "string", "default": null, "description": "Hint text shown below the field" },
+        { "name": "error", "type": "string", "default": null, "description": "Error message — sets error styling" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" },
+        { "name": "required", "type": "boolean", "default": "false", "description": "Marks field as required with asterisk" }
+      ]
+    },
+    {
+      "name": "Modal",
+      "import": "src/components/ui/Modal.jsx",
+      "export": "default",
+      "doc": "/components/modal",
+      "figmaNodeId": "46:48",
+      "props": [
+        { "name": "open", "type": "boolean", "default": "false", "description": "Controls visibility" },
+        { "name": "onClose", "type": "function", "default": null, "description": "Called when Escape or the backdrop is clicked" },
+        { "name": "title", "type": "string", "default": null, "description": "Modal heading" },
+        { "name": "children", "type": "ReactNode", "default": null, "description": "Body content" },
+        { "name": "footer", "type": "ReactNode", "default": null, "description": "Action buttons rendered in the footer" },
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "Max-width of the modal panel" }
+      ]
+    },
+    {
+      "name": "Navbar",
+      "import": "src/components/ui/Navbar.jsx",
+      "export": "default",
+      "doc": "/components/navbar",
+      "figmaNodeId": "170:5",
+      "props": [
+        { "name": "brand", "type": "{ initial, name }", "default": null, "description": "Logo mark letter and brand name" },
+        { "name": "sections", "type": "{ label?, items[] }[]", "default": "[]", "description": "Groups of NavItem props; optional uppercase section label" },
+        { "name": "user", "type": "{ initials, name, email }", "default": null, "description": "User row pinned to the bottom" }
+      ]
+    },
+    {
+      "name": "NavItem",
+      "import": "src/components/ui/NavItem.jsx",
+      "export": "default",
+      "doc": "/components/nav-item",
+      "figmaNodeId": "198:40",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Nav item text" },
+        { "name": "active", "type": "boolean", "default": "false", "description": "Highlights the active/current item" },
+        { "name": "icon", "type": "ReactNode", "default": null, "description": "Icon shown to the left of the label" },
+        { "name": "badge", "type": "number", "default": null, "description": "Count badge shown on the right" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" },
+        { "name": "href", "type": "string", "default": null, "description": "Renders as an anchor tag when provided" },
+        { "name": "onClick", "type": "function", "default": null, "description": "Click handler (used when not an anchor)" }
+      ]
+    },
+    {
+      "name": "Radio",
+      "import": "src/components/ui/Radio.jsx",
+      "export": "default",
+      "doc": "/components/radio",
+      "figmaNodeId": "264:9",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text for the radio option" },
+        { "name": "value", "type": "string", "default": null, "description": "Value submitted with the form" },
+        { "name": "checked", "type": "boolean", "default": "false", "description": "Whether this option is selected" },
+        { "name": "onChange", "type": "function", "default": null, "description": "Change handler" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" }
+      ]
+    },
+    {
+      "name": "Select",
+      "import": "src/components/ui/Select.jsx",
+      "export": "default",
+      "doc": "/components/select",
+      "figmaNodeId": "97:61",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label above the select" },
+        { "name": "options", "type": "Array<{value, label}>", "default": "[]", "description": "Options list" },
+        { "name": "value", "type": "string", "default": null, "description": "Controlled value" },
+        { "name": "onChange", "type": "function", "default": null, "description": "Change handler" },
+        { "name": "placeholder", "type": "string", "default": null, "description": "Empty/placeholder option label" },
+        { "name": "error", "type": "string", "default": null, "description": "Error message" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" },
+        { "name": "required", "type": "boolean", "default": "false", "description": "Marks field as required" }
+      ]
+    },
+    {
+      "name": "Spinner",
+      "import": "src/components/ui/Spinner.jsx",
+      "export": "default",
+      "doc": "/components/spinner",
+      "figmaNodeId": "102:20",
+      "props": [
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "16px / 24px / 36px diameter" },
+        { "name": "color", "type": "\"primary\" | \"muted\"", "default": "primary", "description": "Brand blue or muted grey" }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "import": "src/components/ui/Tabs.jsx",
+      "export": "default",
+      "doc": "/components/tabs",
+      "figmaNodeId": "420:2",
+      "props": [
+        { "name": "tabs", "type": "Array<{label, content}>", "default": "[]", "description": "Tab items — label shown in the tab bar, content rendered in the panel" },
+        { "name": "defaultIndex", "type": "number", "default": "0", "description": "Initially active tab index" }
+      ]
+    },
+    {
+      "name": "Toast",
+      "import": "src/components/ui/Toast.jsx",
+      "export": "default",
+      "doc": "/components/toast",
+      "figmaNodeId": "104:31",
+      "props": [
+        { "name": "message", "type": "string", "default": null, "description": "Notification message text" },
+        { "name": "type", "type": "\"default\" | \"success\" | \"error\" | \"warning\"", "default": "default", "description": "Sets icon and accent color" },
+        { "name": "duration", "type": "number", "default": "3000", "description": "Auto-dismiss delay in milliseconds" }
+      ]
+    },
+    {
+      "name": "Toggle",
+      "import": "src/components/ui/Toggle.jsx",
+      "export": "default",
+      "doc": "/components/toggle",
+      "figmaNodeId": "40:18",
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label beside the toggle" },
+        { "name": "checked", "type": "boolean", "default": "false", "description": "Controlled on/off state" },
+        { "name": "onChange", "type": "function", "default": null, "description": "Change handler" },
+        { "name": "size", "type": "\"sm\" | \"md\" | \"lg\"", "default": "md", "description": "Track size" },
+        { "name": "disabled", "type": "boolean", "default": "false", "description": "Prevents interaction" }
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "import": "src/components/ui/Tooltip.jsx",
+      "export": "default",
+      "doc": "/components/tooltip",
+      "figmaNodeId": "55:22",
+      "props": [
+        { "name": "content", "type": "string", "default": null, "description": "Tooltip text shown on hover/focus" },
+        { "name": "placement", "type": "\"top\" | \"bottom\" | \"left\" | \"right\"", "default": "top", "description": "Position relative to the trigger" },
+        { "name": "children", "type": "ReactNode", "default": null, "description": "The element that triggers the tooltip" }
+      ]
+    }
+  ]
+}
