@@ -28,10 +28,6 @@
   font-weight: 600;
 }
 
-[data-theme="dark"] .nav-item--active {
-  color: var(--color-interactive-primary-hover);
-}
-
 .nav-item--disabled {
   opacity: 0.45;
   cursor: not-allowed;

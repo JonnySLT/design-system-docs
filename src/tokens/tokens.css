@@ -187,8 +187,11 @@
 
   --color-interactive-primary:        #818CF8;
   --color-interactive-primary-hover:  #A5B4FC;
-  --color-interactive-primary-subtle: #312E81;
+  --color-interactive-primary-subtle: #1E1B4B;
   --color-interactive-primary-light:  #6366F1;
+  --color-interactive-primary-fg:     #1E1B4B;
+
+  --color-text-on-primary:            #1E1B4B;
 
   --color-success-bg:     #022C22;
   --color-success-border: #065F46;
