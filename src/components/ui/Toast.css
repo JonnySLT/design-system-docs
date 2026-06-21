@@ -12,8 +12,8 @@
 .toast {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  padding: 12px var(--spacing-lg);
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
   background: var(--color-surface-inverse);
   color: var(--color-text-on-inverse);
   border-radius: var(--radius-lg);
