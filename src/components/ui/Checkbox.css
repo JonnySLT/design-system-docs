@@ -31,7 +31,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
-  color: #fff;
+  color: var(--color-text-on-primary);
 }
 
 .checkbox-box svg {

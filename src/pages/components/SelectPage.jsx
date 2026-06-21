@@ -29,6 +29,7 @@ const props = [
   { prop: 'error',       type: 'string',   default: '—',     description: 'Error message' },
   { prop: 'disabled',    type: 'boolean',  default: 'false', description: 'Prevents interaction' },
   { prop: 'required',    type: 'boolean',  default: 'false', description: 'Marks field as required' },
+  { prop: 'helperText',  type: 'string',   default: '—',     description: 'Hint text shown below the field' },
 ]
 
 const countries = [

@@ -77,7 +77,7 @@
 }
 .ds-button--destructive:hover:not(:disabled) {
   background: var(--color-error-border);
-  color: #fff;
+  color: var(--color-text-on-primary);
 }
 
 /* Loading spinner */
