@@ -190,7 +190,23 @@
   --color-interactive-primary-subtle: #312E81;
   --color-interactive-primary-light:  #6366F1;
 
+  --color-success-bg:     #022C22;
+  --color-success-border: #065F46;
+  --color-success-icon:   #34D399;
   --color-success-text:   #34D399;
+
+  --color-warning-bg:     #431407;
+  --color-warning-border: #92400E;
+  --color-warning-icon:   #FBBF24;
   --color-warning-text:   #FBBF24;
-  --color-error-text:     #FEF2F2;
+
+  --color-error-bg:       #450A0A;
+  --color-error-border:   #991B1B;
+  --color-error-icon:     #F87171;
+  --color-error-text:     #FCA5A5;
+
+  --color-info-bg:        #1E1B4B;
+  --color-info-border:    #3730A3;
+  --color-info-icon:      #818CF8;
+  --color-info-text:      #A5B4FC;
 }
