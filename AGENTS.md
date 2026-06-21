@@ -63,9 +63,10 @@ routed in `App.jsx`, and listed in `nav.js`. Figma node IDs (file `njWLlZEF7ekub
 | Button | `24:2` | Select | `97:61` |
 | Card | `43:21` | Spinner | `102:20` |
 | Checkbox | `39:26` | Tab | `95:21` |
-| Input | `42:42` | TabGroup | `420:2` |
-| Modal | `46:48` | Toast | `104:31` |
-| Toggle | `40:18` | Tooltip | `55:22` |
+| Icons | Icon page | TabGroup | `420:2` |
+| Input | `42:42` | Toast | `104:31` |
+| Modal | `46:48` | Toggle | `40:18` |
+| Tooltip | `55:22` | | |
 
 **Adding a component:** create `src/components/ui/X.jsx` + `X.css`, a `pages/components/XPage.jsx`
 (use `ComponentDemo` + `PropsTable`), and add the route in `App.jsx` and the entry in `nav.js`.

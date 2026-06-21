@@ -148,6 +148,21 @@
       ]
     },
     {
+      "name": "Icons",
+      "import": "src/components/ui/icons.js",
+      "export": "icons",
+      "doc": "/components/icons",
+      "figmaNodeId": null,
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "default": null,
+          "description": "Slug of the icon to render (e.g. \"house\", \"gear\"). All 88 slugs listed on the Icons page."
+        }
+      ]
+    },
+    {
       "name": "Card",
       "import": "src/components/ui/Card.jsx",
       "export": "default",
