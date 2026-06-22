@@ -10,6 +10,9 @@ to get productive without spelunking.
   reference any other).
 - **Tokens:** `src/tokens/tokens.css` is the canonical token file, hand-maintained to mirror
   the Figma variables. See [`TOKENS.md`](./TOKENS.md) for the exact Figma-variable ↔ CSS-variable map.
+  **When you change a token, update all three surfaces** — the Figma variable, `tokens.css`, and
+  `tokens.json` — then run `npm run check:tokens` to confirm `tokens.css` and `tokens.json` agree
+  (it also runs in CI on every push and blocks deploy on drift).
 - **Changelog:** auto-maintained in the Figma file's Changelog page — **do not hand-write
   changelog entries.** See the root `CLAUDE.md` workflow (immediate logging on push; a weekly
   sweep catches manual Figma edits).
