@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check token drift (tokens.json ↔ tokens.css)
+        run: npm run check:tokens
+
+      - name: Check components.json matches source
+        run: npm run check:components
+
       - name: Build
         run: npm run build
         env:

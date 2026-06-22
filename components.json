@@ -567,7 +567,8 @@
     {
       "name": "Toast",
       "import": "src/components/ui/Toast.jsx",
-      "export": "default",
+      "export": "ToastContainer",
+      "sourceSymbol": "ToastItem",
       "doc": "/components/toast",
       "figmaNodeId": "104:31",
       "props": [
