@@ -17,6 +17,24 @@ to get productive without spelunking.
   changelog entries.** See the root `CLAUDE.md` workflow (immediate logging on push; a weekly
   sweep catches manual Figma edits).
 
+### Keeping the repo in sync with Figma (Figma-first workflow)
+
+Changes usually land in Figma first, then the repo must catch up. Two guards:
+
+- **`npm run check:tokens`** — verifies `tokens.css` ↔ `tokens.json` agree (runs in CI, blocks deploy).
+- **`npm run check:figma-tokens`** — verifies the repo's **light-mode** tokens still match Figma. It
+  compares against `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma
+  variables. **Refresh the snapshot** by re-running the `use_figma` extraction (ask Claude — it reads
+  every variable with aliases resolved) and overwriting that file, then run the check to see exactly
+  which repo tokens are stale and what to set them to.
+- **Scope of `check:figma-tokens`** (intentionally narrow, to avoid clobbering curated values):
+  light mode only; mirrored families only (colour primitives, 1:1 semantic colours, feedback
+  colours, spacing, radius, font-size, font-weight). It does **not** touch **dark mode** (the repo's
+  dark palette is independently tuned and intentionally ahead of Figma on several colours), shadows
+  (tuned approximations), the Figma `Components` collection (applied in component CSS, not tokens),
+  or repo-only tokens. Update those by hand when design intent changes. It is **not** a CI gate —
+  the snapshot can be stale, so it's an on-demand tool, not a build blocker.
+
 ## Machine-readable index (for tools & AI agents)
 
 - **`components.json`** — every component's import path, props (name/type/default/description),
