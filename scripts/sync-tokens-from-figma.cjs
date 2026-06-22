@@ -14,9 +14,10 @@
 // overwriting that file; then run this to see what changed.
 //
 // SCOPE — deliberately narrow, to stay safe:
-//   • LIGHT mode only. Dark-mode repo values are independently tuned (the repo
-//     is intentionally ahead of Figma on several dark colours), so syncing dark
-//     from Figma would clobber better values. Dark stays manual.
+//   • BOTH light and dark modes. Figma's Color collection has Light + Dark modes
+//     and is the source of truth for both; the repo's :root and [data-theme="dark"]
+//     blocks must match. (Dark was reconciled into Figma first — see changelog
+//     v1.0.29 — so Figma now carries the better-tuned dark values.)
 //   • Mirrored families only: colour primitives, the 1:1 semantic colours,
 //     feedback colours, spacing, radius, font-size (by value), font-weight.
 //   • EXCLUDED (curated / not repo tokens, never touched here):
@@ -40,6 +41,15 @@ for (const m of rootBlock.matchAll(/(--[a-z0-9-]+)\s*:\s*([^;]+);/gi)) {
   css[m[1].trim()] = m[2].trim();
 }
 
+// Parse the [data-theme="dark"] overrides into { '--name': value }. A semantic
+// token's effective dark value is its dark override, or the :root value it inherits.
+const darkBlock = cssRaw.split('[data-theme="dark"]')[1] || '';
+const cssDark = {};
+for (const m of darkBlock.matchAll(/(--[a-z0-9-]+)\s*:\s*([^;]+);/gi)) {
+  cssDark[m[1].trim()] = m[2].trim();
+}
+const effectiveDark = cssVar => (cssVar in cssDark) ? cssDark[cssVar] : css[cssVar];
+
 const norm = v => String(v).toLowerCase().replace(/['"]/g, '').replace(/\s+/g, ' ').trim();
 
 // ── Explicit Figma-variable → CSS-variable map for the mirrored families ──────
@@ -52,7 +62,9 @@ const MAP = {
   'color/bg/muted': '--color-surface-raised',
   'color/text/default': '--color-text-default',
   'color/text/muted': '--color-text-muted',
-  'color/text/inverted': '--color-text-on-primary',
+  // NOTE: color/text/inverted is intentionally NOT mapped — it has no clean repo
+  // counterpart across both modes (light #FFFFFF matches --color-text-on-primary,
+  // but dark #0F172A matches --color-text-on-inverse; neither matches both).
   'color/interactive/primary': '--color-interactive-primary',
   'color/interactive/primary-hover': '--color-interactive-primary-hover',
   'color/interactive/primary-fg': '--color-interactive-primary-fg',
@@ -107,6 +119,7 @@ const MIRRORED_COLLECTIONS = ['Primitives', 'Color', 'Spacing', 'Typography'];
 const stale = [];
 const missingTarget = [];
 let checked = 0;
+let checkedDark = 0;
 
 for (const collName of MIRRORED_COLLECTIONS) {
   const coll = snapshot[collName];
@@ -136,8 +149,22 @@ for (const collName of MIRRORED_COLLECTIONS) {
     const want = expectedCss(figmaName, def.type, figmaVal);
     if (norm(css[cssVar]) !== norm(want)) {
       stale.push(
-        `${figmaName}\n      Figma: ${figmaVal}  (expect css ${want})\n      ${cssVar}: ${css[cssVar]}`
+        `${figmaName} (light)\n      Figma: ${figmaVal}  (expect css ${want})\n      ${cssVar}: ${css[cssVar]}`
       );
+    }
+
+    // Dark-mode check — Color collection only (it has a Dark mode). The repo's
+    // effective dark value (override, else inherited :root) must match Figma's
+    // dark value. Catches both a wrong override AND a missing one.
+    if (def.type === 'COLOR' && def.modes.Dark != null) {
+      checkedDark++;
+      const repoDark = effectiveDark(cssVar);
+      if (norm(repoDark) !== norm(String(def.modes.Dark))) {
+        stale.push(
+          `${figmaName} (dark)\n      Figma: ${def.modes.Dark}\n      ${cssVar} (dark): ${repoDark}` +
+          ((cssVar in cssDark) ? '' : '  [no dark override — inherits :root]')
+        );
+      }
     }
   }
 }
@@ -145,8 +172,8 @@ for (const collName of MIRRORED_COLLECTIONS) {
 // ── Report ────────────────────────────────────────────────────────────────────
 const problems = stale.length + missingTarget.length;
 if (problems === 0) {
-  console.log(`✓ Repo light-mode tokens match Figma — ${checked} mirrored tokens checked.`);
-  console.log('  (Dark mode, shadows, component tokens, and repo-only tokens are out of scope by design.)');
+  console.log(`✓ Repo tokens match Figma — ${checked} light + ${checkedDark} dark values checked.`);
+  console.log('  (Shadows, the Components collection, and repo-only tokens are out of scope by design.)');
   process.exit(0);
 }
 
@@ -160,8 +187,8 @@ if (missingTarget.length) {
   for (const m of missingTarget) console.error('    • ' + m);
 }
 console.error(
-  '\nFix: update src/tokens/tokens.css (and tokens.json) to the Figma values above,\n' +
-  'then run `npm run check:tokens` to confirm css ↔ json agree. Dark-mode values are\n' +
-  'curated separately — update them by hand if the design intent changed.'
+  '\nFix: update src/tokens/tokens.css to the Figma values above — the :root block for\n' +
+  '(light) entries and the [data-theme="dark"] block for (dark) entries — then run\n' +
+  '`npm run check:tokens` to confirm css ↔ json agree. Figma is the source of truth for both modes.'
 );
 process.exit(1);

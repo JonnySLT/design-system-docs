@@ -28,18 +28,19 @@ CI and block deploy. The individual guards:
   component source signatures (runs in CI, blocks deploy). Stale documented props fail; undocumented
   pass-through props warn. An entry whose documented component is implemented by a differently-named
   internal one can set `"sourceSymbol"` to point the check at the right function (e.g. Toast → ToastItem).
-- **`npm run check:figma-tokens`** — verifies the repo's **light-mode** tokens still match Figma. It
-  compares against `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma
-  variables. **Refresh the snapshot** by re-running the `use_figma` extraction (ask Claude — it reads
-  every variable with aliases resolved) and overwriting that file, then run the check to see exactly
-  which repo tokens are stale and what to set them to.
-- **Scope of `check:figma-tokens`** (intentionally narrow, to avoid clobbering curated values):
-  light mode only; mirrored families only (colour primitives, 1:1 semantic colours, feedback
-  colours, spacing, radius, font-size, font-weight). It does **not** touch **dark mode** (the repo's
-  dark palette is independently tuned and intentionally ahead of Figma on several colours), shadows
-  (tuned approximations), the Figma `Components` collection (applied in component CSS, not tokens),
-  or repo-only tokens. Update those by hand when design intent changes. It is **not** a CI gate —
-  the snapshot can be stale, so it's an on-demand tool, not a build blocker.
+- **`npm run check:figma-tokens`** — verifies the repo's tokens still match Figma in **both light and
+  dark** modes (Figma is the source of truth for both). It compares against
+  `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma variables.
+  **Refresh the snapshot** by re-running the `use_figma` extraction (ask Claude — it reads every
+  variable with aliases resolved, per mode) and overwriting that file, then run the check to see
+  exactly which repo tokens are stale and what to set them to.
+- **Scope of `check:figma-tokens`** (intentionally narrow): mirrored families only — colour primitives,
+  1:1 semantic colours, feedback colours, spacing, radius, font-size, font-weight. Light values check
+  against `:root`; dark values check against `[data-theme="dark"]` (or the inherited `:root` value when
+  there's no override). It does **not** cover shadows (tuned approximations), the Figma `Components`
+  collection (applied in component CSS, not tokens), or repo-only tokens (`--color-surface`,
+  `--color-text-disabled`, …). It is **not** a CI gate — the snapshot can be stale, so it's an
+  on-demand tool, not a build blocker.
 
 ## Machine-readable index (for tools & AI agents)
 

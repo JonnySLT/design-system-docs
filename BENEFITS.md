@@ -1,8 +1,10 @@
 # Claude Design System — Why It Helps Each Team
 
-**The big idea:** one Figma file is the single source of truth, the code repo mirrors it,
-and automated checks keep the two from silently drifting apart. Less manual cross-checking,
-fewer "the design and the build don't match" surprises.
+**The big idea:** Figma is the source of truth for the visual design language — colors
+(light *and* dark), spacing, type, and component appearance — and the code repo mirrors it.
+Code still owns implementation details (component behavior, shadows, a few code-only tokens).
+Automated checks keep the shared parts from silently drifting apart — less manual
+cross-checking, fewer "the design and the build don't match" surprises.
 
 ## 🎨 For Designers
 
