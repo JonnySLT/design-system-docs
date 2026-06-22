@@ -18,12 +18,12 @@
 //     and is the source of truth for both; the repo's :root and [data-theme="dark"]
 //     blocks must match. (Dark was reconciled into Figma first — see changelog
 //     v1.0.29 — so Figma now carries the better-tuned dark values.)
-//   • Mirrored families only: colour primitives, the 1:1 semantic colours,
-//     feedback colours, spacing, radius, font-size (by value), font-weight.
-//   • EXCLUDED (curated / not repo tokens, never touched here):
-//       - shadows           (repo values are tuned approximations of Figma)
+//   • Mirrored families: colour primitives, semantic colours (incl. surface /
+//     on-inverse / disabled), feedback colours, spacing, radius, font-size
+//     (by value), font-weight, and shadows (Shadows collection, light/dark).
+//   • EXCLUDED (not repo tokens / not representable in Figma):
 //       - the Components collection (button/*, badge/*, … — applied in CSS, not tokens)
-//       - repo-only tokens  (--color-surface, --color-text-disabled, --radius-2xl, …)
+//       - font fallback stacks (--font-sans/-mono — Figma stores only the family name)
 //       - duplicate/aliased Figma names (color/bg/brand, color/text/brand, …)
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -74,6 +74,12 @@ const MAP = {
   'color/border/default': '--color-border-default',
   'color/border/strong': '--color-border-strong',
   'color/border/focus': '--color-border-focus',
+  // Surface / on-inverse / disabled (moved into Figma — see changelog)
+  'color/surface': '--color-surface',
+  'color/surface-inverse': '--color-surface-inverse',
+  'color/surface-overlay': '--color-surface-overlay',
+  'color/text/disabled': '--color-text-disabled',
+  'color/text/on-inverse': '--color-text-on-inverse',
   // Spacing — Figma numeric multiplier → repo t-shirt size (by value)
   'spacing/1': '--spacing-xs', 'spacing/2': '--spacing-sm', 'spacing/3': '--spacing-md',
   'spacing/4': '--spacing-lg', 'spacing/5': '--spacing-xl', 'spacing/6': '--spacing-2xl',
@@ -81,7 +87,7 @@ const MAP = {
   'spacing/16': '--spacing-6xl', 'spacing/20': '--spacing-7xl',
   // Radius — 1:1
   'radius/none': '--radius-none', 'radius/sm': '--radius-sm', 'radius/md': '--radius-md',
-  'radius/lg': '--radius-lg', 'radius/xl': '--radius-xl', 'radius/full': '--radius-full',
+  'radius/lg': '--radius-lg', 'radius/xl': '--radius-xl', 'radius/2xl': '--radius-2xl', 'radius/full': '--radius-full',
   // Font size — Figma role-based → repo scale (by value)
   'font-size/body/sm': '--font-size-xs', 'font-size/body/md': '--font-size-sm',
   'font-size/body/lg': '--font-size-md', 'font-size/heading/4': '--font-size-lg',
@@ -115,7 +121,7 @@ function feedbackTarget(figmaName) {
 }
 
 // ── Walk the mirrored families and compare LIGHT values ───────────────────────
-const MIRRORED_COLLECTIONS = ['Primitives', 'Color', 'Spacing', 'Typography'];
+const MIRRORED_COLLECTIONS = ['Primitives', 'Color', 'Spacing', 'Typography', 'Shadows'];
 const stale = [];
 const missingTarget = [];
 let checked = 0;
@@ -135,6 +141,7 @@ for (const collName of MIRRORED_COLLECTIONS) {
     if (!cssVar && /^(indigo|slate|emerald|amber|red)\/\d+$/.test(figmaName)) {
       cssVar = '--' + figmaName.replace('/', '-');
     }
+    if (!cssVar && figmaName.startsWith('shadow/')) cssVar = '--' + figmaName.replace('/', '-');
     if (!cssVar) cssVar = feedbackTarget(figmaName);
     if (!cssVar) continue; // intentionally unmapped (emphasis, brand aliases, display lg/md, line-height, letter-spacing…)
 
@@ -156,7 +163,7 @@ for (const collName of MIRRORED_COLLECTIONS) {
     // Dark-mode check — Color collection only (it has a Dark mode). The repo's
     // effective dark value (override, else inherited :root) must match Figma's
     // dark value. Catches both a wrong override AND a missing one.
-    if (def.type === 'COLOR' && def.modes.Dark != null) {
+    if (def.modes.Dark != null) {
       checkedDark++;
       const repoDark = effectiveDark(cssVar);
       if (norm(repoDark) !== norm(String(def.modes.Dark))) {
@@ -173,7 +180,7 @@ for (const collName of MIRRORED_COLLECTIONS) {
 const problems = stale.length + missingTarget.length;
 if (problems === 0) {
   console.log(`✓ Repo tokens match Figma — ${checked} light + ${checkedDark} dark values checked.`);
-  console.log('  (Shadows, the Components collection, and repo-only tokens are out of scope by design.)');
+  console.log('  (The Components collection and CSS-only font fallback stacks are out of scope by design.)');
   process.exit(0);
 }
 

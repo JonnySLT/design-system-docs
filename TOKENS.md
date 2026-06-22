@@ -42,10 +42,15 @@ Figma token to code, use this table.
 | `color/feedback/success-text` | `--color-success-text` | |
 | `color/feedback/warning*` | `--color-warning-{border,icon,bg,text}` | |
 | `color/feedback/error*` | `--color-error-{border,icon,bg,text}` | |
+| `color/surface` | `--color-surface` | 1:1 |
+| `color/surface-inverse` | `--color-surface-inverse` | 1:1 |
+| `color/surface-overlay` | `--color-surface-overlay` | 1:1 (rgba scrim, same both modes) |
+| `color/text/disabled` | `--color-text-disabled` | 1:1 |
+| `color/text/on-inverse` | `--color-text-on-inverse` | 1:1 |
 
-**Repo-only (no Figma equivalent):** `--color-surface`, `--color-surface-overlay`,
-`--color-text-disabled`, `--color-info-*`, `--radius-2xl`, `--shadow-xs`. These are intentional
-implementation conveniences.
+**CSS-only (not in Figma):** the font fallback stacks inside `--font-sans` / `--font-mono` — Figma
+stores only the family name (e.g. `Inter`), and the fallback chain is a CSS concern. Everything else
+(surface colours, `--color-text-disabled`, `--radius-2xl`, all shadows) now has a Figma variable.
 
 ## Spacing — by value (Figma multiplier → repo t-shirt)
 
@@ -65,7 +70,7 @@ implementation conveniences.
 
 ## Radius
 
-`radius/none|sm|md|lg|xl|full` → `--radius-none|sm|md|lg|xl|full` (1:1). Repo adds `--radius-2xl` (16px).
+`radius/none|sm|md|lg|xl|2xl|full` → `--radius-none|sm|md|lg|xl|2xl|full` (1:1). `2xl` = 16px.
 
 ## Typography
 
@@ -76,5 +81,7 @@ implementation conveniences.
 
 ## Shadows
 
-`shadow/sm|md|lg|xl` → `--shadow-sm|md|lg|xl`. Repo adds `--shadow-xs`. Exact blur/opacity values
-are approximations and may differ slightly from Figma.
+Shadows live in a dedicated **Shadows** collection with **Light / Dark** modes.
+`shadow/xs|sm|md|lg|xl|focus|focus-subtle` → `--shadow-xs|sm|md|lg|xl|focus|focus-subtle` (1:1).
+Values match the repo exactly (Figma is the source of truth). `xs–xl` are identical in both modes;
+`focus` / `focus-subtle` differ per mode (indigo-600 tint in light, indigo-400 in dark).

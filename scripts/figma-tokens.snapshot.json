@@ -1,5 +1,5 @@
 {
-  "$comment": "Snapshot of the MIRRORED Figma token variables (the families that map to repo tokens). Pulled via use_figma from file njWLlZEF7ekubL8zrsegQ3. The Components collection and Figma-only text-style sizes are intentionally excluded — they are not repo tokens. Regenerate by re-running the extraction and overwriting this file. Last pulled: 2026-06-22.",
+  "$comment": "Snapshot of the MIRRORED Figma token variables (the families that map to repo tokens): Primitives, Color (light/dark), Spacing, Typography, and Shadows (light/dark). Pulled via use_figma from file njWLlZEF7ekubL8zrsegQ3. The Components collection and Figma-only text-style sizes are intentionally excluded — they are not repo tokens; font fallback stacks live only in CSS. Regenerate by re-running the extraction and overwriting this file. Last pulled: 2026-06-22.",
   "Primitives": {
     "modes": ["Value"],
     "variables": {
@@ -78,7 +78,12 @@
       "color/feedback/info-bg":     {"type":"COLOR","modes":{"Light":"#EEF2FF","Dark":"#1E1B4B"}},
       "color/feedback/info-border": {"type":"COLOR","modes":{"Light":"#4F46E5","Dark":"#3730A3"}},
       "color/feedback/info-icon":   {"type":"COLOR","modes":{"Light":"#4F46E5","Dark":"#818CF8"}},
-      "color/feedback/info-text":   {"type":"COLOR","modes":{"Light":"#4338CA","Dark":"#A5B4FC"}}
+      "color/feedback/info-text":   {"type":"COLOR","modes":{"Light":"#4338CA","Dark":"#A5B4FC"}},
+      "color/surface":         {"type":"COLOR","modes":{"Light":"#FFFFFF","Dark":"#1E293B"}},
+      "color/surface-inverse": {"type":"COLOR","modes":{"Light":"#1E293B","Dark":"#F1F5F9"}},
+      "color/surface-overlay": {"type":"COLOR","modes":{"Light":"rgba(15, 23, 42, 0.6)","Dark":"rgba(15, 23, 42, 0.6)"}},
+      "color/text/disabled":   {"type":"COLOR","modes":{"Light":"#94A3B8","Dark":"#475569"}},
+      "color/text/on-inverse": {"type":"COLOR","modes":{"Light":"#F8FAFC","Dark":"#0F172A"}}
     }
   },
   "Spacing": {
@@ -100,7 +105,20 @@
       "radius/md":   {"type":"FLOAT","modes":{"Value":6}},
       "radius/lg":   {"type":"FLOAT","modes":{"Value":8}},
       "radius/xl":   {"type":"FLOAT","modes":{"Value":12}},
+      "radius/2xl":  {"type":"FLOAT","modes":{"Value":16}},
       "radius/full": {"type":"FLOAT","modes":{"Value":9999}}
+    }
+  },
+  "Shadows": {
+    "modes": ["Light", "Dark"],
+    "variables": {
+      "shadow/xs": {"type":"STRING","modes":{"Light":"0 1px 2px rgba(0, 0, 0, 0.04)","Dark":"0 1px 2px rgba(0, 0, 0, 0.04)"}},
+      "shadow/sm": {"type":"STRING","modes":{"Light":"0 1px 3px rgba(0, 0, 0, 0.08)","Dark":"0 1px 3px rgba(0, 0, 0, 0.08)"}},
+      "shadow/md": {"type":"STRING","modes":{"Light":"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)","Dark":"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"}},
+      "shadow/lg": {"type":"STRING","modes":{"Light":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)","Dark":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"}},
+      "shadow/xl": {"type":"STRING","modes":{"Light":"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)","Dark":"0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"}},
+      "shadow/focus": {"type":"STRING","modes":{"Light":"0 0 0 3px rgba(79, 70, 229, 0.35)","Dark":"0 0 0 3px rgba(129, 140, 248, 0.4)"}},
+      "shadow/focus-subtle": {"type":"STRING","modes":{"Light":"0 0 0 3px rgba(79, 70, 229, 0.12)","Dark":"0 0 0 3px rgba(129, 140, 248, 0.15)"}}
     }
   },
   "Typography": {

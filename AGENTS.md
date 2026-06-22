@@ -34,12 +34,13 @@ CI and block deploy. The individual guards:
   **Refresh the snapshot** by re-running the `use_figma` extraction (ask Claude — it reads every
   variable with aliases resolved, per mode) and overwriting that file, then run the check to see
   exactly which repo tokens are stale and what to set them to.
-- **Scope of `check:figma-tokens`** (intentionally narrow): mirrored families only — colour primitives,
-  1:1 semantic colours, feedback colours, spacing, radius, font-size, font-weight. Light values check
-  against `:root`; dark values check against `[data-theme="dark"]` (or the inherited `:root` value when
-  there's no override). It does **not** cover shadows (tuned approximations), the Figma `Components`
-  collection (applied in component CSS, not tokens), or repo-only tokens (`--color-surface`,
-  `--color-text-disabled`, …). It is **not** a CI gate — the snapshot can be stale, so it's an
+- **Scope of `check:figma-tokens`**: mirrored families — colour primitives, semantic colours (incl.
+  surface / on-inverse / disabled), feedback colours, spacing, radius, font-size, font-weight, and
+  **shadows** (the Shadows collection, light/dark). Light values check against `:root`; dark values
+  check against `[data-theme="dark"]` (or the inherited `:root` value when there's no override). It
+  does **not** cover the Figma `Components` collection (applied in component CSS, not tokens) or the
+  font fallback stacks in `--font-sans`/`--font-mono` (Figma stores only the family name). It is
+  **not** a CI gate — the snapshot can be stale, so it's an
   on-demand tool, not a build blocker.
 
 ## Machine-readable index (for tools & AI agents)
