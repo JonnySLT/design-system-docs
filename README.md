@@ -6,7 +6,8 @@ with a docs site. It mirrors the *Claude Design System* Figma file.
 🔗 **Live docs:** https://jonnyslt.github.io/design-system-docs/
 
 New here? This README gets you running and using a component in a few minutes. For deeper
-detail see [AGENTS.md](./AGENTS.md).
+detail see [AGENTS.md](./AGENTS.md). For a plain-language overview of how this system helps
+designers, developers, and AI, see [BENEFITS.md](./BENEFITS.md).
 
 ## What it's built with
 
