@@ -85,6 +85,7 @@
       "color/border/default": {"type":"COLOR","modes":{"Light":"#E2E8F0","Dark":"#334155"}},
       "color/border/strong":  {"type":"COLOR","modes":{"Light":"#CBD5E1","Dark":"#475569"}},
       "color/border/focus":   {"type":"COLOR","modes":{"Light":"#6366F1","Dark":"#818CF8"}},
+      "color/border/input":   {"type":"COLOR","modes":{"Light":"#94A3B8","Dark":"#64748B"}},
       "color/border/brand":   {"type":"COLOR","modes":{"Light":"#4F46E5","Dark":"#6366F1"}},
       "color/feedback/success":        {"type":"COLOR","modes":{"Light":"#059669","Dark":"#34D399"}},
       "color/feedback/success-bg":     {"type":"COLOR","modes":{"Light":"#ECFDF5","Dark":"#022C22"}},

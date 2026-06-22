@@ -74,6 +74,7 @@ const MAP = {
   'color/border/default': '--color-border-default',
   'color/border/strong': '--color-border-strong',
   'color/border/focus': '--color-border-focus',
+  'color/border/input': '--color-border-input',
   // Surface / on-inverse / disabled (moved into Figma — see changelog)
   'color/surface': '--color-surface',
   'color/surface-inverse': '--color-surface-inverse',

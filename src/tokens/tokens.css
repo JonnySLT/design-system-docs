@@ -84,6 +84,7 @@
   --color-border-default:   #E2E8F0;
   --color-border-strong:    #CBD5E1;
   --color-border-focus:     #6366F1;
+  --color-border-input:     #94A3B8;
 
   /* --- Semantic: Interactive ----------------------- */
   --color-interactive-primary:        #4F46E5;
@@ -209,6 +210,7 @@
   --color-border-default: #334155;
   --color-border-strong:  #475569;
   --color-border-focus:   #818CF8;
+  --color-border-input:   #64748B;
 
   --color-interactive-primary:        #818CF8;
   --color-interactive-primary-hover:  #A5B4FC;
