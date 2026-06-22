@@ -1,10 +1,11 @@
 # Claude Design System — Why It Helps Each Team
 
-**The big idea:** Figma is the source of truth for the visual design language — colors
-(light *and* dark), spacing, type, and component appearance — and the code repo mirrors it.
-Code still owns implementation details (component behavior, shadows, a few code-only tokens).
-Automated checks keep the shared parts from silently drifting apart — less manual
-cross-checking, fewer "the design and the build don't match" surprises.
+**The big idea:** Figma is the source of truth for the design tokens — colors (light *and*
+dark), spacing, radius, type, and shadows — plus component appearance, and the code repo
+mirrors it. Code owns implementation details: how components behave, and a couple of CSS-only
+specifics (like font fallback fonts). Automated checks keep the shared parts from silently
+drifting apart — less manual cross-checking, fewer "the design and the build don't match"
+surprises.
 
 ## 🎨 For Designers
 
