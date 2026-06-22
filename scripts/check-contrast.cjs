@@ -70,7 +70,7 @@ const PAIRS = [
   ['--color-warning-icon', '--color-bg-default', 'ui', 'Warning icon on background (toast)'],
   ['--color-error-icon', '--color-error-bg', 'ui', 'Error icon on error bg'],
   ['--color-info-icon', '--color-info-bg', 'ui', 'Info icon on info bg'],
-  ['--color-interactive-neutral', '--color-bg-default', 'ui', 'Input/Select border on background'],
+  ['--color-border-input', '--color-bg-default', 'note', 'Input/Select border — deliberate mid-ground (light ~2.6:1, dark ~3.5:1)'],
   ['--color-border-focus', '--color-bg-default', 'ui', 'Focus ring on background'],
   ['--color-border-strong', '--color-bg-default', 'note', 'Container border (strong) — non-essential'],
   ['--color-border-default', '--color-bg-default', 'note', 'Container border (default) — non-essential'],
