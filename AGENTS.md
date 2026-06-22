@@ -19,7 +19,9 @@ to get productive without spelunking.
 
 ### Keeping the repo in sync with Figma (Figma-first workflow)
 
-Changes usually land in Figma first, then the repo must catch up. Three guards (all run in CI):
+Changes usually land in Figma first, then the repo must catch up. **Run `npm run check` to verify
+all three guards at once** (handy before a commit); `check:tokens` and `check:components` also run in
+CI and block deploy. The individual guards:
 
 - **`npm run check:tokens`** — verifies `tokens.css` ↔ `tokens.json` agree (runs in CI, blocks deploy).
 - **`npm run check:components`** — verifies `components.json`'s documented props match the actual
