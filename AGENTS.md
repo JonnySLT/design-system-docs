@@ -19,9 +19,13 @@ to get productive without spelunking.
 
 ### Keeping the repo in sync with Figma (Figma-first workflow)
 
-Changes usually land in Figma first, then the repo must catch up. Two guards:
+Changes usually land in Figma first, then the repo must catch up. Three guards (all run in CI):
 
 - **`npm run check:tokens`** — verifies `tokens.css` ↔ `tokens.json` agree (runs in CI, blocks deploy).
+- **`npm run check:components`** — verifies `components.json`'s documented props match the actual
+  component source signatures (runs in CI, blocks deploy). Stale documented props fail; undocumented
+  pass-through props warn. An entry whose documented component is implemented by a differently-named
+  internal one can set `"sourceSymbol"` to point the check at the right function (e.g. Toast → ToastItem).
 - **`npm run check:figma-tokens`** — verifies the repo's **light-mode** tokens still match Figma. It
   compares against `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma
   variables. **Refresh the snapshot** by re-running the `use_figma` extraction (ask Claude — it reads

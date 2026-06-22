@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check:tokens": "node scripts/check-token-drift.cjs",
-    "check:figma-tokens": "node scripts/sync-tokens-from-figma.cjs"
+    "check:figma-tokens": "node scripts/sync-tokens-from-figma.cjs",
+    "check:components": "node scripts/check-components.cjs"
   },
   "dependencies": {
     "react": "^18.3.1",
