@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import DemoLayout from './DemoLayout.jsx'
-import Alert from '../../components/ui/Alert.jsx'
 import Button from '../../components/ui/Button.jsx'
 import Input from '../../components/ui/Input.jsx'
 import Select from '../../components/ui/Select.jsx'
 import Toggle from '../../components/ui/Toggle.jsx'
 import Checkbox from '../../components/ui/Checkbox.jsx'
+import { ToastContainer, useToast } from '../../components/ui/Toast.jsx'
 import './demo.css'
 
 const ROLE_OPTIONS = [
@@ -17,7 +17,7 @@ const ROLE_OPTIONS = [
 ]
 
 export default function AccountSettings() {
-  const [showAlert, setShowAlert] = useState(true)
+  const { toasts, dismiss, toast } = useToast()
   const [form, setForm] = useState({
     firstName: 'Sarah',
     lastName: 'Chen',
@@ -34,7 +34,7 @@ export default function AccountSettings() {
   })
 
   function handleSave() {
-    setShowAlert(true)
+    toast('Your changes have been saved successfully.', 'success')
   }
 
   return (
@@ -42,18 +42,6 @@ export default function AccountSettings() {
       <div className="demo-settings-page">
         <h1 className="demo-settings-title">Account Settings</h1>
         <p className="demo-settings-subtitle">Manage your profile, preferences, and notification settings.</p>
-
-        {showAlert && (
-          <div className="demo-alert-wrapper">
-            <Alert
-              type="success"
-              title="Profile updated"
-              message="Your changes have been saved successfully."
-              dismissible
-              onDismiss={() => setShowAlert(false)}
-            />
-          </div>
-        )}
 
         {/* Profile card */}
         <div className="demo-settings-card">
@@ -152,6 +140,7 @@ export default function AccountSettings() {
           <Button variant="primary" size="md" onClick={handleSave}>Save changes</Button>
         </div>
       </div>
+      <ToastContainer toasts={toasts} onDismiss={dismiss} />
     </DemoLayout>
   )
 }
