@@ -43,8 +43,6 @@ const TABS = [
   { label: 'Sessions', content: <ActivityList /> },
   { label: 'Page views', content: <ActivityList /> },
   { label: 'Events', content: <ActivityList /> },
-  { label: 'Conversions', content: <ActivityList /> },
-  { label: 'Retention', content: <ActivityList /> },
 ]
 
 export default function Dashboard() {

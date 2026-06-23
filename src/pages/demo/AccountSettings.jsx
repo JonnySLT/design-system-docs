@@ -17,7 +17,7 @@ const ROLE_OPTIONS = [
 ]
 
 export default function AccountSettings() {
-  const [saved, setSaved] = useState(false)
+  const [showAlert, setShowAlert] = useState(true)
   const [form, setForm] = useState({
     firstName: 'Sarah',
     lastName: 'Chen',
@@ -34,8 +34,7 @@ export default function AccountSettings() {
   })
 
   function handleSave() {
-    setSaved(true)
-    setTimeout(() => setSaved(false), 4000)
+    setShowAlert(true)
   }
 
   return (
@@ -44,9 +43,15 @@ export default function AccountSettings() {
         <h1 className="demo-settings-title">Account Settings</h1>
         <p className="demo-settings-subtitle">Manage your profile, preferences, and notification settings.</p>
 
-        {saved && (
+        {showAlert && (
           <div className="demo-alert-wrapper">
-            <Alert type="success" title="Profile updated" message="Your changes have been saved successfully." />
+            <Alert
+              type="success"
+              title="Profile updated"
+              message="Your changes have been saved successfully."
+              dismissible
+              onDismiss={() => setShowAlert(false)}
+            />
           </div>
         )}
 
