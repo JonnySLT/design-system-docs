@@ -50,6 +50,27 @@ all five guards at once** (handy before a commit); `check:tokens`, `check:compon
   **not** a CI gate — the snapshot can be stale, so it's an
   on-demand tool, not a build blocker.
 
+### Keeping components in sync with Figma (both directions)
+
+The guards above cover token *values* and component *prop contracts*. Component *appearance* is kept
+in sync by two independent change-flags that prompt a human to reconcile (there is no reliable
+automatic Figma-vs-code pixel comparison — the two model components differently):
+
+- **Design → dev:** the weekly Figma fingerprint sweep deep-hashes every Figma component and flags any
+  edit (logged as a `MANUAL` changelog entry). See the root `CLAUDE.md`.
+- **Dev → design:** **visual regression** (`npm run test:visual`, Playwright). It renders each
+  component's docs page (`main.docs-content`) and diffs it against a committed baseline screenshot;
+  any code change that alters a component's appearance fails until the baseline is re-approved with
+  `npm run test:visual:update`. Threshold is an absolute `maxDiffPixels` (catches a small component
+  change that a ratio would miss), with animations disabled for determinism.
+
+**Baselines are platform-specific** (Playwright tags them `-darwin` / `-linux`). The committed ones are
+macOS; **CI runs in the official Playwright Linux container** (`.github/workflows/visual.yml`) and needs
+`-linux` baselines. Generate them once: Actions → *Visual regression* → *Run workflow* → `update = true`
+(it regenerates and commits the Linux baselines). After that, the PR check compares against them and
+uploads a visual-diff report on failure. Locally, run `npm run test:visual` before pushing component
+changes.
+
 ## Machine-readable index (for tools & AI agents)
 
 - **`components.json`** — every component's import path, props (name/type/default/description),

@@ -1,0 +1,56 @@
+name: Visual regression
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      update:
+        description: "Regenerate baselines and commit them (run once on main to create the Linux baselines)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    # The official Playwright image pins the browser + Linux font rendering so
+    # screenshots are deterministic and match the committed *-linux baselines.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.0-noble
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install dependencies
+        run: npm ci
+
+      # PRs: compare the rendered components against the committed baselines.
+      # Fails (and uploads a visual diff report) if a component's appearance changed.
+      - name: Compare against baselines
+        if: github.event_name == 'pull_request'
+        run: npm run test:visual
+
+      # One-time / on-demand: regenerate the Linux baselines and commit them.
+      # Trigger from Actions → Visual regression → Run workflow → update = true.
+      - name: Regenerate baselines
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.update }}
+        run: npm run test:visual:update
+
+      - name: Commit regenerated baselines
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.update }}
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/__screenshots__
+          git commit -m "ci: regenerate visual baselines (linux)" || echo "no changes"
+          git push
+
+      - name: Upload diff report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
