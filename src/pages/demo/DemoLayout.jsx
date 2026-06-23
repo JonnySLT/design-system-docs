@@ -5,23 +5,23 @@ import './demo.css'
 const NAV_SECTIONS = [
   {
     items: [
-      { label: 'Dashboard', icon: 'home', href: '#/demo' },
-      { label: 'Projects', icon: 'folder', badge: 4, href: '#' },
-      { label: 'Analytics', icon: 'bar-chart', href: '#' },
-      { label: 'Messages', icon: 'message-circle', badge: 12, href: '#' },
-      { label: 'Files', icon: 'file', href: '#' },
-      { label: 'Calendar', icon: 'calendar', href: '#' },
+      { label: 'Dashboard', href: '#/demo' },
+      { label: 'Projects', badge: 4, href: '#' },
+      { label: 'Analytics', href: '#' },
+      { label: 'Messages', badge: 12, href: '#' },
+      { label: 'Files', href: '#' },
+      { label: 'Calendar', href: '#' },
     ],
   },
   {
     label: 'Settings',
     items: [
-      { label: 'Profile', icon: 'user', href: '#/demo/settings' },
-      { label: 'Security', icon: 'lock', href: '#' },
-      { label: 'Notifications', icon: 'bell', href: '#' },
-      { label: 'Billing', icon: 'credit-card', href: '#' },
-      { label: 'Integrations', icon: 'zap', href: '#' },
-      { label: 'Team', icon: 'users', href: '#' },
+      { label: 'Profile', href: '#/demo/settings' },
+      { label: 'Security', href: '#' },
+      { label: 'Notifications', href: '#' },
+      { label: 'Billing', href: '#' },
+      { label: 'Integrations', href: '#' },
+      { label: 'Team', href: '#' },
     ],
   },
 ]
