@@ -27,6 +27,8 @@ import ToastPage from './pages/components/ToastPage.jsx'
 import NavItemPage from './pages/components/NavItemPage.jsx'
 import NavbarPage from './pages/components/NavbarPage.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
+import Dashboard from './pages/demo/Dashboard.jsx'
+import AccountSettings from './pages/demo/AccountSettings.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -36,7 +38,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Layout>
+    <Layout demoRoutes={['/demo', '/demo/settings']}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -65,6 +67,8 @@ export default function App() {
         <Route path="/components/navbar"   element={<NavbarPage />} />
         <Route path="/components/nav-item" element={<NavItemPage />} />
         <Route path="/components/*" element={<ComingSoon title="Component" />} />
+        <Route path="/demo" element={<Dashboard />} />
+        <Route path="/demo/settings" element={<AccountSettings />} />
       </Routes>
     </Layout>
   )

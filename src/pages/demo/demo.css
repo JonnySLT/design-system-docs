@@ -1,0 +1,307 @@
+/* Demo shell — full-width, no docs sidebar */
+.demo-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.demo-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--color-bg-subtle);
+}
+
+/* Dashboard */
+.demo-page {
+  padding: 40px 48px;
+  max-width: 1200px;
+}
+
+.demo-page-header {
+  margin-bottom: 32px;
+}
+
+.demo-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin: 0 0 4px;
+}
+
+.demo-page-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Stat cards */
+.demo-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.demo-stat-card {
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+}
+
+.demo-stat-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.demo-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin: 0 0 4px;
+}
+
+.demo-stat-change {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.demo-stat-change--up {
+  color: #16a34a;
+}
+
+/* Two-col layout */
+.demo-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.demo-card {
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+}
+
+.demo-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-default);
+  margin: 0 0 16px;
+}
+
+/* Activity list */
+.demo-activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-activity-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.demo-activity-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-interactive-primary);
+  color: var(--color-interactive-primary-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.demo-activity-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.demo-activity-text {
+  font-size: 13px;
+  color: var(--color-text-default);
+  margin: 0 0 2px;
+}
+
+.demo-activity-time {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Project rows */
+.demo-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.demo-project-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-project-name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-default);
+}
+
+.demo-project-bar-track {
+  width: 120px;
+  height: 6px;
+  background: var(--color-border-default);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.demo-project-bar-fill {
+  height: 100%;
+  background: var(--color-interactive-primary);
+  border-radius: 999px;
+}
+
+.demo-project-pct {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  width: 32px;
+  text-align: right;
+}
+
+/* Settings page */
+.demo-settings-page {
+  padding: 40px 48px;
+  max-width: 760px;
+}
+
+.demo-settings-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin: 0 0 4px;
+}
+
+.demo-settings-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0 0 32px;
+}
+
+.demo-settings-card {
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.demo-settings-card-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.demo-settings-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-default);
+  margin: 0 0 4px;
+}
+
+.demo-settings-card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.demo-settings-card-body {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demo-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Toggle rows */
+.demo-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 32px;
+  border-top: 1px solid var(--color-border-default);
+}
+
+.demo-toggle-row:first-child {
+  border-top: none;
+}
+
+.demo-toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-default);
+  margin: 0 0 2px;
+}
+
+.demo-toggle-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Checkbox section */
+.demo-checkbox-section {
+  padding: 24px 32px;
+  border-top: 1px solid var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.demo-checkbox-section-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin: 0 0 4px;
+}
+
+.demo-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-text-default);
+  cursor: pointer;
+}
+
+/* Actions row */
+.demo-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+/* Alert wrapper */
+.demo-alert-wrapper {
+  margin-bottom: 24px;
+}

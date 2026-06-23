@@ -1,7 +1,7 @@
 # Claude Design System
 
 > A React + CSS design system and docs site, mirroring the Claude Design System Figma library
-> (file key njWLlZEF7ekubL8zrsegQ3). Covers design tokens, 16 text styles, 88 icons, and 18
+> (file key njWLlZEF7ekubL8zrsegQ3). Covers design tokens, 16 text styles, 88 icons, and 19
 > components. Each component has a live demo and a props table.
 
 Machine-readable references (in the repo, https://github.com/JonnySLT/design-system-docs):

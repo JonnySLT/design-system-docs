@@ -13,6 +13,11 @@ export default function Home() {
         </p>
       </div>
 
+      <div className="home-hero-actions">
+        <Link to="/demo" className="home-cta-primary">View live demo →</Link>
+        <Link to="/getting-started/installation" className="home-cta-secondary">Get started</Link>
+      </div>
+
       <div className="home-cards">
         <Link to="/foundations/tokens" className="home-card">
           <div className="home-card-icon">🎨</div>
