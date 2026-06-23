@@ -22,3 +22,24 @@ test.describe('component visual regression', () => {
     });
   }
 });
+
+// The full-width demo pages have no .docs-content chrome — they render a
+// .demo-shell. Capture the whole shell at a tall desktop viewport so the
+// entire page (sidebar + content) fits in one baseline.
+const demoRoutes = [
+  { name: 'demo-dashboard', path: '/demo' },
+  { name: 'demo-settings', path: '/demo/settings' },
+];
+
+test.describe('demo visual regression', () => {
+  test.use({ viewport: { width: 1440, height: 1600 } });
+  for (const { name, path } of demoRoutes) {
+    test(name, async ({ page }) => {
+      await page.goto(`/#${path}`);
+      await page.waitForLoadState('networkidle');
+      await page.evaluate(() => document.fonts.ready);
+      const shell = page.locator('.demo-shell');
+      await expect(shell).toHaveScreenshot(`${name}.png`, { fullPage: false });
+    });
+  }
+});
