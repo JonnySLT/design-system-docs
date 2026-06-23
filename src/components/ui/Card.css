@@ -37,7 +37,7 @@
 }
 
 .card-description {
-  font-size: 13px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   margin-top: 4px;
   font-family: var(--font-sans);

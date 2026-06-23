@@ -192,6 +192,7 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-focus:        0 0 0 3px rgba(79, 70, 229, 0.35);
   --shadow-focus-subtle: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  --shadow-focus-error:  0 0 0 3px rgba(220, 38, 38, 0.12);
 
   /* --- Extra spacing -------------------------------- */
   --spacing-7xl: 80px;
@@ -226,6 +227,7 @@
 
   --shadow-focus:        0 0 0 3px rgba(129, 140, 248, 0.4);
   --shadow-focus-subtle: 0 0 0 3px rgba(129, 140, 248, 0.15);
+  --shadow-focus-error:  0 0 0 3px rgba(248, 113, 113, 0.15);
 
   --color-success-bg:     #022C22;
   --color-success-border: #065F46;

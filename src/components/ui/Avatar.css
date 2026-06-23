@@ -26,7 +26,7 @@
   width: 24px;
   height: 24px;
 }
-.avatar--sm .avatar__initials { font-size: 10px; }
+.avatar--sm .avatar__initials { font-size: var(--font-size-xs); }
 
 .avatar--md {
   width: 32px;

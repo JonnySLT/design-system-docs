@@ -50,7 +50,7 @@
   border-color: var(--color-error-border);
 }
 .input-field--error .input-control:focus {
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  box-shadow: var(--shadow-focus-error);
 }
 .input-field--error .input-hint {
   color: var(--color-error-text);

@@ -9,9 +9,9 @@
   border: 1px solid transparent;
 }
 
-.ds-badge--sm { font-size: 11px; padding: 1px 6px; }
+.ds-badge--sm { font-size: var(--font-size-xs); padding: 1px 6px; }
 .ds-badge--md { font-size: var(--font-size-xs); padding: 2px 8px; }
-.ds-badge--lg { font-size: 13px; padding: 3px 10px; }
+.ds-badge--lg { font-size: var(--font-size-sm); padding: 3px 10px; }
 
 .ds-badge--default {
   background: var(--color-bg-subtle);
