@@ -32,6 +32,7 @@ Figma token to code, use this table.
 | `color/interactive/primary-fg` | `--color-interactive-primary-fg` | 1:1 |
 | `color/interactive/primary-subtle` | `--color-interactive-primary-subtle` | 1:1 |
 | `color/interactive/primary-light` | `--color-interactive-primary-light` | 1:1 |
+| _(code-only)_ | `--color-interactive-on-inverse` | link/action text on the inverse surface — lighter brand in light mode, darker in dark mode, AA-enforced |
 | `color/interactive/neutral` | `--color-interactive-neutral` | 1:1 |
 | `color/border/default` | `--color-border-default` | 1:1 |
 | `color/border/strong` | `--color-border-strong` | 1:1 |

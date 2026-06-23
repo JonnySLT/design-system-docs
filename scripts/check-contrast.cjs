@@ -75,6 +75,7 @@ const PAIRS = [
   ['--color-border-strong', '--color-bg-default', 'note', 'Container border (strong) — non-essential'],
   ['--color-border-default', '--color-bg-default', 'note', 'Container border (default) — non-essential'],
   ['--color-text-on-inverse', '--color-surface-inverse', 'text', 'Text on inverse surface'],
+  ['--color-interactive-on-inverse', '--color-surface-inverse', 'text', 'Link/action text on inverse surface (toast)'],
 ];
 
 let failures = 0;

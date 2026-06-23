@@ -92,6 +92,7 @@
   --color-interactive-primary-fg:     #FFFFFF;
   --color-interactive-primary-subtle: #EEF2FF;
   --color-interactive-primary-light:  #818CF8;
+  --color-interactive-on-inverse:     #818CF8; /* link/action text on inverse surface (AA on surface-inverse) */
   --color-interactive-neutral:        #64748B;
 
   /* --- Semantic: Status ---------------------------- */
@@ -218,6 +219,7 @@
   --color-interactive-primary-subtle: #1E1B4B;
   --color-interactive-primary-light:  #6366F1;
   --color-interactive-primary-fg:     #1E1B4B;
+  --color-interactive-on-inverse:     #4F46E5; /* darker brand: inverse surface is light in dark mode */
   --color-interactive-neutral:        #94A3B8;
 
   --color-text-on-primary:            #1E1B4B;
