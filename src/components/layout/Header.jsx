@@ -52,7 +52,7 @@ export default function Header() {
           Figma
         </a>
         <a
-          href="https://github.com/JonnySLT/design-system-docs"
+          href="https://github.com/JonnySLT/design-system-demo"
           target="_blank"
           rel="noreferrer"
           className="header-btn"

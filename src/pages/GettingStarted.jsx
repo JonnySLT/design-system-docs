@@ -36,8 +36,8 @@ export default function GettingStarted() {
       </table>
 
       <h2 className="section-title">Run it locally</h2>
-      <CodeBlock language="bash" code={`git clone https://github.com/JonnySLT/design-system-docs.git
-cd design-system-docs
+      <CodeBlock language="bash" code={`git clone https://github.com/JonnySLT/design-system-demo.git
+cd design-system-demo
 npm install
 npm run dev      # open the localhost URL it prints`} />
       <p style={{ color: 'var(--color-text-muted)', fontSize: 14, marginTop: 12, marginBottom: 32 }}>

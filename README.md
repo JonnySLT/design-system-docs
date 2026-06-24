@@ -3,7 +3,7 @@
 A small, dependency-light **React** design system — components, design tokens, and icons —
 with a docs site. It mirrors the *Claude Design System* Figma file.
 
-🔗 **Live docs:** https://jonnyslt.github.io/design-system-docs/
+🔗 **Live docs:** https://jonnyslt.github.io/design-system-demo/
 
 New here? This README gets you running and using a component in a few minutes. For deeper
 detail see [AGENTS.md](./AGENTS.md). For a plain-language overview of how this system helps
@@ -24,8 +24,8 @@ codebase. Styling is just classes + CSS variables.
 ## Run it locally
 
 ```bash
-git clone https://github.com/JonnySLT/design-system-docs.git
-cd design-system-docs
+git clone https://github.com/JonnySLT/design-system-demo.git
+cd design-system-demo
 npm install
 npm run dev      # then open the localhost URL it prints
 ```
@@ -58,7 +58,7 @@ export default function Example() {
 }
 ```
 
-Every component's props and live examples are on the [docs site](https://jonnyslt.github.io/design-system-docs/),
+Every component's props and live examples are on the [docs site](https://jonnyslt.github.io/design-system-demo/),
 or in [`components.json`](./components.json) as a machine-readable list.
 
 ## Anatomy of a component
@@ -112,7 +112,7 @@ src/
 
 ## Where to go next
 
-- **[Live docs site](https://jonnyslt.github.io/design-system-docs/)** — browse every component with examples, props, accessibility notes, and do/don't guidelines.
+- **[Live docs site](https://jonnyslt.github.io/design-system-demo/)** — browse every component with examples, props, accessibility notes, and do/don't guidelines.
 - **[AGENTS.md](./AGENTS.md)** — fuller orientation, including the Figma component map.
 - **[components.json](./components.json)** / **[tokens.json](./tokens.json)** — machine-readable component API and design tokens.
 - **[TOKENS.md](./TOKENS.md)** — token naming and the Figma-variable mapping.

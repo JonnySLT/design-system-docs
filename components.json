@@ -1,7 +1,7 @@
 {
   "name": "Claude Design System",
   "figmaFile": "njWLlZEF7ekubL8zrsegQ3",
-  "docsBaseUrl": "https://jonnyslt.github.io/design-system-docs/#",
+  "docsBaseUrl": "https://jonnyslt.github.io/design-system-demo/#",
   "components": [
     {
       "name": "Alert",
