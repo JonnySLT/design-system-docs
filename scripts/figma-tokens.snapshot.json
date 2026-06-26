@@ -105,7 +105,7 @@
       "color/feedback/info-text":   {"type":"COLOR","modes":{"Light":"#4338CA","Dark":"#A5B4FC"}},
       "color/surface":         {"type":"COLOR","modes":{"Light":"#FFFFFF","Dark":"#1E293B"}},
       "color/surface-inverse": {"type":"COLOR","modes":{"Light":"#1E293B","Dark":"#F1F5F9"}},
-      "color/surface-overlay": {"type":"COLOR","modes":{"Light":"rgba(15, 23, 42, 0.65)","Dark":"rgba(15, 23, 42, 0.65)"}},
+      "color/surface-overlay": {"type":"COLOR","modes":{"Light":"rgba(15, 23, 42, 0.6)","Dark":"rgba(15, 23, 42, 0.6)"}},
       "color/text/disabled":   {"type":"COLOR","modes":{"Light":"#94A3B8","Dark":"#475569"}},
       "color/text/on-inverse": {"type":"COLOR","modes":{"Light":"#F8FAFC","Dark":"#0F172A"}}
     }
